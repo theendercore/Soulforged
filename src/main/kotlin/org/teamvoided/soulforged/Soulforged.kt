@@ -1,17 +1,19 @@
-package org.teamvoided.template
+package org.teamvoided.soulforged
 
 import net.minecraft.util.Identifier
 import org.slf4j.LoggerFactory
+import org.teamvoided.soulforged.items.SfItems
 
 @Suppress("unused")
-object Template {
-    const val MODID = "template"
+object Soulforged {
+    const val MODID = "soulforged"
 
     @JvmField
-    val LOGGER = LoggerFactory.getLogger(Template::class.java)
+    val LOGGER = LoggerFactory.getLogger(Soulforged::class.java)
 
     fun commonInit() {
-        LOGGER.info("Hello from Common")
+        LOGGER.info("sucnut")
+        SfItems.init()
     }
 
     fun clientInit() {
@@ -19,5 +21,4 @@ object Template {
     }
 
     fun id(path: String) = Identifier(MODID, path)
-    fun mc(path: String) = Identifier(path)
 }

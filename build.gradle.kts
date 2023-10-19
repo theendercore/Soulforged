@@ -10,18 +10,26 @@ plugins {
 group = project.properties["maven_group"]!!
 version = project.properties["mod_version"]!!
 base.archivesName.set(project.properties["archives_base_name"] as String)
-description = "TeamVoided Template Mod"
+description = "ahahzahahahahahahhah"
 
 repositories {
     mavenCentral()
+    maven {
+        name = "brokenfuseReleases"
+        url = uri("https://maven.teamvoided.org/releases")
+    }
 }
 
 modSettings {
     modId(base.archivesName.get())
-    modName("Team Voided Template Mod")
+    modName("Soulforged")
 
-    entrypoint("main", "org.teamvoided.templatemod.TemplateMod::commonInit")
-    entrypoint("client", "org.teamvoided.templatemod.TemplateMod::clientInit")
+    entrypoint("main", "org.teamvoided.soulforged.Soulforged::commonInit")
+    entrypoint("client", "org.teamvoided.soulforged.Soulforged::clientInit")
+}
+
+dependencies{
+   modImplementation("org.teamvoided:voidlib-core:1.5.7+1.20.1")
 }
 
 tasks {
